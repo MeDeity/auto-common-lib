@@ -5,6 +5,7 @@
  * @Description: 自动化模块（多版本支持）
  */
 // import _logUtils from '../common/LogUtils'; 不知道为什么 会触发 'TypeError: 无法修改只读属性：exports.' 错误
+let RandomUtils = require('./RandomUtils');
 
 const hasRootPermission = function () {
   return files.exists("/sbin/su") || files.exists("/system/xbin/su") || files.exists("/system/bin/su")
@@ -90,6 +91,16 @@ let AutomatorOperate = {
      */
     clickCenter: function (obj) {
         return _automator.click(obj.bounds().centerX(), obj.bounds().centerY())
+    },
+    /**
+     * 随机点击控件
+     * @param {Object} obj 
+     */
+    clickRandom: function (obj) {
+        if(obj){
+            let rect = obj.bounds();
+            return _automator.click(RandomUtils.randomNum(rect.left,rect.right), RandomUtils.randomNum(rect.top,rect.bottom))
+        }
     },
     /**
      * 滑动

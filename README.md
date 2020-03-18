@@ -1,3 +1,7 @@
+##### 如何安装
+```js
+npm i auto-common-lib
+```
 ##### 使用方式(最好加入ES6特性)
 ```js
 var autoCommonLib = require('auto-common-lib');

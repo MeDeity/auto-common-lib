@@ -1,5 +1,8 @@
 importClass(android.net.Uri);
-
+/**
+ * 短信模块,需要获取通知使用权限
+ * 另外个别国产手机如果需要获取验证码需要关闭验证码保护(例如华为手机)
+ */
 let AutoLibSms = {
     
     /**

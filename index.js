@@ -1,5 +1,9 @@
-let AutoLibSms = require('./packages/common/auto-lib-sms')
+let AutoLibSms = require('./packages/libs/AutoLibSms')
+let BackPressEvent = require('./packages/libs/BackPressEvent')
+let LogUtils = require('./packages/common/LogUtils')
 
 module.exports = {
-    AutoLibSms:AutoLibSms
+    AutoLibSms:AutoLibSms,
+    BackPressEvent:BackPressEvent,
+    LogUtils:LogUtils
 };

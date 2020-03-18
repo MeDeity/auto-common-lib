@@ -25,10 +25,6 @@ let AutoLibSms = {
         }
         
     },
-
-    sayHello:function(){
-        console.info("hello world");
-    }
 }
 
 module.exports = AutoLibSms;

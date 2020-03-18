@@ -1,3 +1,3 @@
-let autoSmsLib = require('../common/auto-lib-sms');
+let autoSmsLib = require('../libs/auto-lib-sms');
 
 autoSmsLib.sayHello();

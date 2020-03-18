@@ -8,7 +8,7 @@
     "start": "npm run build && node dist/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "langrenbule@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",

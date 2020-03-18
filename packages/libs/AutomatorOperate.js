@@ -4,7 +4,7 @@
  * @Last Modified time: 2020-01-12 20:14:15
  * @Description: 自动化模块（多版本支持）
  */
-import _logUtils from '../common/LogUtils';
+// import _logUtils from '../common/LogUtils'; 不知道为什么 会触发 'TypeError: 无法修改只读属性：exports.' 错误
 
 const hasRootPermission = function () {
   return files.exists("/sbin/su") || files.exists("/system/xbin/su") || files.exists("/system/bin/su")
@@ -73,7 +73,7 @@ function Automation () {
 
 }
 
-const _automator = (device.sdkInt < 24 || hasRootPermission()) ? new Automation_root() : new Automation()
+const _automator = (device.sdkInt < 24 || hasRootPermission()) ? new Automation_root() : new Automation();
 
 let AutomatorOperate = {
     /**

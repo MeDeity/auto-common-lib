@@ -1,4 +1,10 @@
+![](https://img.shields.io/npm/v/auto-common-lib.svg)
+
+**本项目需要配合Autojs.Pro使用**
+
+
 ##### 如何安装
+
 ```js
 npm i auto-common-lib
 ```

@@ -11,7 +11,7 @@ npm i auto-common-lib
 ##### 使用方式(最好加入ES6特性)
 ```js
 var autoCommonLib = require('auto-common-lib');
-let {AutoLibSms,BackPressEvent,LogUtils} = autoCommonLib;
+let {AutoLibSms,BackPressEvent,LogUtils,RetryPromise} = autoCommonLib;
 ```
 
 #### 功能使用说明
@@ -23,6 +23,29 @@ let result = AutoLibSms.getPhoneNumberSmsFirstInBox("95561");
 ui.emitter.on("back_pressed", e => {
    BackPressEvent.handleBackEvent(e);
 });
+```
+#### 函数执行失败自动重试(RetryPromise)
+目前暂不支持带参数的函数
+```js
+function work(){
+   let promise = new Promise(function(resolve,reject){
+      let number = Math.random()*10;
+      if(number<=5){
+         reject('不及格呀,继续努力');
+      }else{
+         resolve('很好已经达到要求了')
+      }
+   })
+   return promise
+}
+
+function testRetryPromise(){
+   RetryPromise.retry(work,3,500).then(res=>{
+      console.info('恭喜,通过了考试')
+   }).catch(error=>{
+      console.info('很遗憾,补考也没通过,只能结业')
+   })
+}
 ```
 
 #### 日志使用
